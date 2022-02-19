@@ -1,6 +1,5 @@
 //
 //  APIError.swift
-//  PokemonLibrary
 //
 //  Created by Muhammad Ikhsan on 12/02/22.
 //

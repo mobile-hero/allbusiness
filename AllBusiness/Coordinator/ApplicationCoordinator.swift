@@ -1,6 +1,5 @@
 //
 //  ApplicationCoordinator.swift
-//  PokemonLibrary
 //
 //  Created by Muhammad Ikhsan on 11/02/22.
 //

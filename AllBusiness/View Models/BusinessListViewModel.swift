@@ -1,6 +1,5 @@
 //
-//  PokemonListViewModel.swift
-//  PokemonLibrary
+//  BusinessListViewModel.swift
 //
 //  Created by Muhammad Ikhsan on 12/02/22.
 //

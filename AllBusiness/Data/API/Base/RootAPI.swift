@@ -34,22 +34,6 @@ class RootAPI: TargetType {
     }
 }
 
-class PokemonAPI: RootAPI {
-    init(
-        path: String = "",
-        method: Moya.Method = .post,
-        task: Task = .requestPlain
-    ) {
-        super.init(
-            baseURL: "https://api.pokemontcg.io/v2",
-            path: path,
-            method: method,
-            task: task,
-            headers: ["X-Api-Key": "274ac064-fc2c-41d5-bcd5-46930cafe0dd"]
-        )
-    }
-}
-
 class YelpFusionAPI: RootAPI {
     init(
         path: String = "",

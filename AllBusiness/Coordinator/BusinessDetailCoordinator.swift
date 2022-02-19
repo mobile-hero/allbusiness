@@ -1,6 +1,5 @@
 //
-//  PokemonDetailController.swift
-//  PokemonLibrary
+//  BusinessDetailController.swift
 //
 //  Created by Muhammad Ikhsan on 11/02/22.
 //

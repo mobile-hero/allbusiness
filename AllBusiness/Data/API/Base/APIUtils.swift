@@ -43,7 +43,7 @@ extension APIService {
                 let result = try decoder.decode(T.self, from: value.data)
                 completion?(result, nil)
             } catch {
-                completion?(nil, APIError(message: "Terdapat kesalahan"))
+                completion?(nil, APIError(message: "Upsss, your data cannot be decoded"))
             }
             break
         case .failure:
