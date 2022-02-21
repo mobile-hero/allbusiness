@@ -62,6 +62,9 @@
 		149939D227C3EDAC0096DF41 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939D127C3EDAC0096DF41 /* ReviewCell.swift */; };
 		149939D427C3EDD60096DF41 /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149939D327C3EDD60096DF41 /* ReviewCell.xib */; };
 		149939D627C3F00C0096DF41 /* ReviewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939D527C3F00B0096DF41 /* ReviewAdapter.swift */; };
+		149939D927C3F7160096DF41 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939D827C3F7160096DF41 /* PhotoCell.swift */; };
+		149939DB27C3F7290096DF41 /* PhotoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939DA27C3F7290096DF41 /* PhotoAdapter.swift */; };
+		149939DD27C3FA040096DF41 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149939D727C3F6FB0096DF41 /* PhotoCell.xib */; };
 		2F32950DF0F0BD3A99BC8744 /* Pods_AllBusiness_AllBusinessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715F2083331D92A69A966272 /* Pods_AllBusiness_AllBusinessUITests.framework */; };
 		302BA0E7030FF5888C379310 /* Pods_AllBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3780E3816998AB411391E3D /* Pods_AllBusiness.framework */; };
 		594F6B44435C91F1423B15B2 /* Pods_AllBusinessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D5F1228ACAC9B1DA7F68AB /* Pods_AllBusinessTests.framework */; };
@@ -145,6 +148,9 @@
 		149939D127C3EDAC0096DF41 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		149939D327C3EDD60096DF41 /* ReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
 		149939D527C3F00B0096DF41 /* ReviewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAdapter.swift; sourceTree = "<group>"; };
+		149939D727C3F6FB0096DF41 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		149939D827C3F7160096DF41 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		149939DA27C3F7290096DF41 /* PhotoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAdapter.swift; sourceTree = "<group>"; };
 		21D5F1228ACAC9B1DA7F68AB /* Pods_AllBusinessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllBusinessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56388354582F05278C15759B /* Pods-AllBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllBusiness.release.xcconfig"; path = "Target Support Files/Pods-AllBusiness/Pods-AllBusiness.release.xcconfig"; sourceTree = "<group>"; };
 		715F2083331D92A69A966272 /* Pods_AllBusiness_AllBusinessUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllBusiness_AllBusinessUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,8 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				145778E427C1013500C3A9D9 /* BusinessListViewController.swift */,
-				145778EA27C1086400C3A9D9 /* BusinessListAdapter.swift */,
 				145778F127C11A5C00C3A9D9 /* BusinessListViewController.xib */,
+				145778EA27C1086400C3A9D9 /* BusinessListAdapter.swift */,
 				145778EF27C108F000C3A9D9 /* BusinessListCell.swift */,
 				145778F227C11A7500C3A9D9 /* BusinessListCell.xib */,
 			);
@@ -200,6 +206,9 @@
 			children = (
 				145778E627C101DB00C3A9D9 /* BusinessDetailViewController.swift */,
 				145B438227C2A4E4009EAE62 /* BusinessDetailViewController.xib */,
+				149939DA27C3F7290096DF41 /* PhotoAdapter.swift */,
+				149939D827C3F7160096DF41 /* PhotoCell.swift */,
+				149939D727C3F6FB0096DF41 /* PhotoCell.xib */,
 				149939CD27C3A3C60096DF41 /* OpenHourAdapter.swift */,
 				149939CB27C3A3A50096DF41 /* OpenHourCell.swift */,
 				149939CF27C3B20D0096DF41 /* OpenHourCell.xib */,
@@ -514,6 +523,7 @@
 				149939D027C3B20D0096DF41 /* OpenHourCell.xib in Resources */,
 				149939D427C3EDD60096DF41 /* ReviewCell.xib in Resources */,
 				145B438327C2A4E4009EAE62 /* BusinessDetailViewController.xib in Resources */,
+				149939DD27C3FA040096DF41 /* PhotoCell.xib in Resources */,
 				145778F327C11A8500C3A9D9 /* BusinessListViewController.xib in Resources */,
 				1460A61027BE99FB00BAA9AD /* Assets.xcassets in Resources */,
 				145778F427C11A8A00C3A9D9 /* BusinessListCell.xib in Resources */,
@@ -656,6 +666,7 @@
 				1460A60E27BE99F900BAA9AD /* AllBusiness.xcdatamodeld in Sources */,
 				145778D327C0E90B00C3A9D9 /* APIUtils.swift in Sources */,
 				1460A64927BE9CED00BAA9AD /* Region.swift in Sources */,
+				149939DB27C3F7290096DF41 /* PhotoAdapter.swift in Sources */,
 				145778DE27C100B400C3A9D9 /* BusinessListCoordinator.swift in Sources */,
 				145778DD27C100AF00C3A9D9 /* BusinessDetailCoordinator.swift in Sources */,
 				149939C827C3976B0096DF41 /* Hour.swift in Sources */,
@@ -679,6 +690,7 @@
 				145778D627C0E97000C3A9D9 /* YelpFusionServices.swift in Sources */,
 				145778D427C0E90B00C3A9D9 /* APIError.swift in Sources */,
 				1460A64527BE9CBE00BAA9AD /* Center.swift in Sources */,
+				149939D927C3F7160096DF41 /* PhotoCell.swift in Sources */,
 				145778F027C108F000C3A9D9 /* BusinessListCell.swift in Sources */,
 				149939CE27C3A3C60096DF41 /* OpenHourAdapter.swift in Sources */,
 				145778D127C0E90B00C3A9D9 /* SessionManager.swift in Sources */,

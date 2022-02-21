@@ -31,6 +31,10 @@ class BusinessDetailViewController: UIViewController {
     @IBOutlet weak var phoneButton: UIButton!
     @IBOutlet weak var websiteButton: UIButton!
     
+    @IBOutlet weak var photosCollectionView: UICollectionView!
+    @IBOutlet weak var photosErrorLabel: UILabel!
+    @IBOutlet weak var photosLoadingIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var openHoursTableView: UITableView!
     @IBOutlet weak var openHoursTableHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var openHoursErrorLabel: UILabel!
@@ -47,6 +51,7 @@ class BusinessDetailViewController: UIViewController {
     let viewModel: BusinessDetailViewModel
     let reviewsViewModel: BusinessReviewsViewModel
     
+    private var photoAdapter: PhotoAdapter?
     private var openHourAdapter: OpenHourAdapter?
     private var reviewAdapter: ReviewAdapter?
     
@@ -74,12 +79,19 @@ class BusinessDetailViewController: UIViewController {
         mapView.isRotateEnabled = false
         mapView.isScrollEnabled = false
         
-        addressButton.setTitle("", for: .application)
+        addressButton.setImage(UIImage(named: "turn-direction"), for: .normal)
+        addressButton.setTitle("", for: .normal)
         addressButton.addClick(on: self, action: #selector(addressButtonDidTapped))
-        phoneButton.setTitle("", for: .application)
+        phoneButton.setImage(UIImage(named: "phone"), for: .normal)
+        phoneButton.setTitle("", for: .normal)
         phoneButton.addClick(on: self, action: #selector(phoneButtonDidTapped))
-        websiteButton.setTitle("", for: .application)
+        websiteButton.setImage(UIImage(named: "share"), for: .normal)
+        websiteButton.setTitle("", for: .normal)
         websiteButton.addClick(on: self, action: #selector(websiteButtonDidTapped))
+        
+        photoAdapter = PhotoAdapter(collectionView: photosCollectionView)
+        photosErrorLabel.isHidden = true
+        photosLoadingIndicator.hidesWhenStopped = true
         
         openHourAdapter = OpenHourAdapter(tableView: openHoursTableView, heightConstraint: openHoursTableHeightConstraint)
         openHoursErrorLabel.isHidden = true
@@ -113,8 +125,10 @@ class BusinessDetailViewController: UIViewController {
         viewModel.isLoading.bind { value in
             if (value) {
                 self.openHoursLoadingIndicator.startAnimating()
+                self.photosLoadingIndicator.startAnimating()
             } else {
                 self.openHoursLoadingIndicator.stopAnimating()
+                self.photosLoadingIndicator.stopAnimating()
             }
         }
         
@@ -124,6 +138,8 @@ class BusinessDetailViewController: UIViewController {
         }
         
         viewModel.error.bind { value in
+            self.photosErrorLabel.isHidden = value == nil
+            self.photosErrorLabel.text = value?.message ?? ""
             self.openHoursErrorLabel.isHidden = value == nil
             self.openHoursErrorLabel.text = value?.message ?? ""
         }
@@ -150,6 +166,9 @@ class BusinessDetailViewController: UIViewController {
     }
     
     func bindOtherDetails(business: Business) {
+        if let photo = business.photos {
+            photoAdapter?.setData(source: photo)
+        }
         if let hours = business.hoursTransformed {
             openHourAdapter?.setData(source: hours)
         }
