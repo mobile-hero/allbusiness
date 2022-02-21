@@ -1,6 +1,6 @@
 //
-//  PokemonListCell.swift
-//  PokemonLibrary
+//  BusinessListCell.swift
+//  AllBusiness
 //
 //  Created by Muhammad Ikhsan on 10/02/22.
 //
