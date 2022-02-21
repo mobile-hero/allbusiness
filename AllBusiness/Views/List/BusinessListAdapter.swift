@@ -1,6 +1,6 @@
 //
 //  BusinessListAdapter.swift
-//  BusinessLibrary
+//  AllBusiness
 //
 //  Created by Muhammad Ikhsan on 10/02/22.
 //

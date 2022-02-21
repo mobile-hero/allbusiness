@@ -17,10 +17,16 @@
                 <outlet property="imageView" destination="e6i-r7-5cG" id="UdJ-01-kcq"/>
                 <outlet property="mapView" destination="siD-jh-8eD" id="pUQ-ua-A9v"/>
                 <outlet property="nameLabel" destination="lSS-5K-Mpq" id="Wkt-5g-d9s"/>
+                <outlet property="openHoursErrorLabel" destination="I5y-aA-cfA" id="t67-Eg-K9C"/>
+                <outlet property="openHoursLoadingIndicator" destination="Dw1-VX-m8b" id="t0m-iN-cWd"/>
+                <outlet property="openHoursTableHeightConstraint" destination="2x3-Rx-hnT" id="YeR-iW-Ije"/>
                 <outlet property="openHoursTableView" destination="Cz8-DB-1lL" id="Hcm-Ss-8gC"/>
                 <outlet property="phoneButton" destination="dfp-sr-Hld" id="3Fd-gd-VjA"/>
                 <outlet property="phoneLabel" destination="Wbg-mV-1p8" id="twR-oa-XEO"/>
                 <outlet property="ratingLabel" destination="TO1-1y-wWv" id="pMy-JT-Kfl"/>
+                <outlet property="reviewsErrorLabel" destination="dyc-zQ-IXc" id="v8e-iA-xew"/>
+                <outlet property="reviewsLoadingIndicator" destination="b6V-5e-jWK" id="rQu-5j-sSU"/>
+                <outlet property="reviewsTableHeightConstraint" destination="f3j-CS-lLP" id="J9J-Ej-3WM"/>
                 <outlet property="reviewsTableView" destination="4Gl-Jx-IzV" id="qx5-Se-fuL"/>
                 <outlet property="view" destination="iN0-l3-epB" id="PaZ-mb-ALK"/>
                 <outlet property="websiteButton" destination="AU2-Ea-UBG" id="qOj-4I-bt8"/>
@@ -254,6 +260,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="128" id="f3j-CS-lLP"/>
                                             </constraints>
+                                            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </tableView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, this business is closed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5y-aA-cfA">
                                             <rect key="frame" x="97" y="93.5" width="220.5" height="20.5"/>

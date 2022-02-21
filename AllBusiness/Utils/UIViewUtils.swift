@@ -1,6 +1,5 @@
 //
 //  UIView.swift
-//  Altic
 //
 //  Created by Nanang Rafsanjani on 7/27/17.
 //
@@ -34,6 +33,63 @@ extension UIView {
     
     func disableTap(gesture: UITapGestureRecognizer) {
         removeGestureRecognizer(gesture)
+    }
+}
+
+typealias BLTableViewDelegate = UITableViewDelegate & UITableViewDataSource
+
+extension UITableView {
+    func setup(delegate: BLTableViewDelegate, estimatedRowHeight: CGFloat) {
+        self.delegate = delegate
+        self.dataSource = delegate
+        self.rowHeight = UITableView.automaticDimension
+        self.estimatedRowHeight = estimatedRowHeight
+    }
+    
+    func setup(delegate: BLTableViewDelegate, rowHeight: CGFloat) {
+        self.delegate = delegate
+        self.dataSource = delegate
+        self.rowHeight = rowHeight
+    }
+    
+    func registerCellClass(_ cell: UITableViewCell.Type) {
+        self.register(cell, forCellReuseIdentifier: cell.className)
+    }
+    
+    func registerCell(_ cell: UITableViewCell.Type) {
+        self.register(cell.NIB, forCellReuseIdentifier: cell.className)
+    }
+    
+    func registerCells(_ cells: [UITableViewCell.Type]) {
+        cells.forEach({ registerCell($0) })
+    }
+    
+    func registerHeaderFooter(_ view: UITableViewHeaderFooterView.Type) {
+        self.register(view.NIB, forHeaderFooterViewReuseIdentifier: view.className)
+    }
+    
+    func reusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
+        return dequeueReusableCell(withIdentifier: T.className, for: indexPath) as! T
+    }
+    
+    func reusableCell<T: UITableViewCell>() -> T {
+        return dequeueReusableCell(withIdentifier: T.className) as! T
+    }
+    
+    func reusableHeaderFooterView<T: UITableViewHeaderFooterView>() -> T {
+        return dequeueReusableHeaderFooterView(withIdentifier: T.className) as! T
+    }
+}
+
+extension UITableViewCell {
+    static var NIB: UINib {
+        return UINib.init(nibName: self.className, bundle: Bundle.main)
+    }
+}
+
+extension UITableViewHeaderFooterView {
+    static var NIB: UINib {
+        return UINib.init(nibName: self.className, bundle: Bundle.main)
     }
 }
 

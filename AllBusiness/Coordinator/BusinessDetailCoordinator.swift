@@ -25,9 +25,12 @@ class BusinessDetailCoordinator: Coordinator {
     }
     
     func start() {
-        let yelpServices = YelpFusionServices(session: CustomSessionManager.default, plugins: defaultPlugins, decoder: JSONDecoder())
-//        let viewModel = PokemonListViewModelImpl(pokemonServices: pokemonServices)
-        let detailController = BusinessDetailViewController(business: business)
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        let yelpServices = YelpFusionServices(session: CustomSessionManager.default, plugins: defaultPlugins, decoder: jsonDecoder)
+        let viewModel = BusinessDetailViewModelImpl(businessId: business.id, yelpServices: yelpServices)
+        let reviewsViewModel = BusinessReviewViewModelImpl(businessId: business.id, yelpServices: yelpServices)
+        let detailController = BusinessDetailViewController(business: business, viewModel: viewModel, reviewsViewModel: reviewsViewModel)
         detailController.delegate = self
         navigationController.pushViewController(detailController, animated: true)
         self.detailController = detailController

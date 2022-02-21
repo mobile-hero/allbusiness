@@ -22,6 +22,7 @@ class BusinessDetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
+    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
@@ -29,15 +30,29 @@ class BusinessDetailViewController: UIViewController {
     @IBOutlet weak var addressButton: UIButton!
     @IBOutlet weak var phoneButton: UIButton!
     @IBOutlet weak var websiteButton: UIButton!
+    
     @IBOutlet weak var openHoursTableView: UITableView!
+    @IBOutlet weak var openHoursTableHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var openHoursErrorLabel: UILabel!
+    @IBOutlet weak var openHoursLoadingIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var reviewsTableView: UITableView!
+    @IBOutlet weak var reviewsTableHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var reviewsErrorLabel: UILabel!
+    @IBOutlet weak var reviewsLoadingIndicator: UIActivityIndicatorView!
     
     var delegate: BusinessDetailViewControllerDelegate?
     
     let business: Business
+    let viewModel: BusinessDetailViewModel
+    let reviewsViewModel: BusinessReviewsViewModel
     
-    init(business: Business) {
+    private var openHourAdapter: OpenHourAdapter?
+    
+    init(business: Business, viewModel: BusinessDetailViewModel, reviewsViewModel: BusinessReviewsViewModel) {
         self.business = business
+        self.viewModel = viewModel
+        self.reviewsViewModel = reviewsViewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -64,6 +79,8 @@ class BusinessDetailViewController: UIViewController {
         phoneButton.addClick(on: self, action: #selector(phoneButtonDidTapped))
         websiteButton.setTitle("", for: .application)
         websiteButton.addClick(on: self, action: #selector(websiteButtonDidTapped))
+        
+        openHourAdapter = OpenHourAdapter(tableView: openHoursTableView, heightConstraint: openHoursTableHeightConstraint)
     }
     
     func bindData() {
@@ -85,6 +102,19 @@ class BusinessDetailViewController: UIViewController {
         annotation.coordinate = business.coordinatesTransformed
         annotation.title = business.name
         mapView.addAnnotation(annotation)
+        
+        viewModel.source.bind { value in
+            guard value != nil else { return }
+            self.bindOtherDetails(business: value.unsafelyUnwrapped)
+        }
+        
+        viewModel.getDetails()
+    }
+    
+    func bindOtherDetails(business: Business) {
+        if let hours = business.hoursTransformed {
+            openHourAdapter?.setData(source: hours)
+        }
     }
     
     @objc func addressButtonDidTapped() {

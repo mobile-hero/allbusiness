@@ -19,8 +19,10 @@ struct Business: Codable {
     let location: Location
     let phone: String
     let displayPhone: String
-    let distance: Double
+    let distance: Double?
     let price: String?
+    let photos: [String]?
+    let hours: [Hour]?
     
     var ratingDisplay: String {
         return rating.description
@@ -44,5 +46,10 @@ struct Business: Codable {
     
     var urlFormatted: URL {
         return URL(string: url)!
+    }
+    
+    var hoursTransformed: [OpenHourData]? {
+        guard hours != nil && !hours!.isEmpty else { return nil }
+        return hours!.first!.hourOpenTransformed
     }
 }

@@ -10,6 +10,6 @@ import Foundation
 class BusinessReviewsAPI: YelpFusionAPI {
     
     init(businessId: String) {
-        super.init(path: "/business/\(businessId)/reviews", method: .get, task: .requestPlain)
+        super.init(path: "/businesses/\(businessId)/reviews", method: .get, task: .requestPlain)
     }
 }

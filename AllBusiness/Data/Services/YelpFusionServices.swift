@@ -14,11 +14,11 @@ class YelpFusionServices: APIService<YelpFusionAPI> {
         request(try! BusinessListAPI(limit: limit, offset: offset, coord: coord, location: location, term: term, sortBy: sortBy), completion: completion)
     }
     
-    func getDetails(businessId: String, completion: APIResult<BusinessResponse>) {
+    func getDetails(businessId: String, completion: APIResult<Business>) {
         request(BusinessDetailAPI(businessId: businessId), completion: completion)
     }
     
-    func getReviews(businessId: String, completion: APIResult<BusinessResponse>) {
+    func getReviews(businessId: String, completion: APIResult<ReviewResponse>) {
         request(BusinessReviewsAPI(businessId: businessId), completion: completion)
     }
     
