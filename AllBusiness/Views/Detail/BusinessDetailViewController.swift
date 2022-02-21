@@ -81,6 +81,11 @@ class BusinessDetailViewController: UIViewController {
         websiteButton.addClick(on: self, action: #selector(websiteButtonDidTapped))
         
         openHourAdapter = OpenHourAdapter(tableView: openHoursTableView, heightConstraint: openHoursTableHeightConstraint)
+        openHoursErrorLabel.isHidden = true
+        openHoursLoadingIndicator.hidesWhenStopped = true
+        
+        reviewsErrorLabel.isHidden = true
+        reviewsLoadingIndicator.hidesWhenStopped = true
     }
     
     func bindData() {
@@ -103,9 +108,22 @@ class BusinessDetailViewController: UIViewController {
         annotation.title = business.name
         mapView.addAnnotation(annotation)
         
+        viewModel.isLoading.bind { value in
+            if (value) {
+                self.openHoursLoadingIndicator.startAnimating()
+            } else {
+                self.openHoursLoadingIndicator.stopAnimating()
+            }
+        }
+        
         viewModel.source.bind { value in
             guard value != nil else { return }
             self.bindOtherDetails(business: value.unsafelyUnwrapped)
+        }
+        
+        viewModel.error.bind { value in
+            self.openHoursErrorLabel.isHidden = value == nil
+            self.openHoursErrorLabel.text = value?.message ?? ""
         }
         
         viewModel.getDetails()

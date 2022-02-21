@@ -9,27 +9,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="141" id="XBi-9e-Tmz" customClass="OpenHourCell" customModule="AllBusiness" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="346" height="141"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="0.0" rowHeight="40" id="XBi-9e-Tmz" customClass="OpenHourCell" customModule="AllBusiness" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="346" height="40"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XBi-9e-Tmz" id="EMe-Jb-AXt">
-                <rect key="frame" x="0.0" y="0.0" width="346" height="141"/>
+                <rect key="frame" x="0.0" y="0.0" width="346" height="40"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="izq-Rf-TcI">
-                        <rect key="frame" x="16" y="8" width="314" height="125"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="izq-Rf-TcI">
+                        <rect key="frame" x="16" y="8" width="314" height="24"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSd-os-xec">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="9Fc-1c-saM"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="153" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipi-T8-MxR">
-                                <rect key="frame" x="166" y="0.0" width="148" height="20.5"/>
+                                <rect key="frame" x="161" y="0.0" width="153" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,11 +41,12 @@
                     <constraint firstAttribute="trailing" secondItem="izq-Rf-TcI" secondAttribute="trailing" constant="16" id="zGJ-NH-Ih8"/>
                 </constraints>
             </tableViewCellContentView>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="dayLabel" destination="lSd-os-xec" id="PEu-vZ-dgb"/>
                 <outlet property="hourLabel" destination="Ipi-T8-MxR" id="ln8-Sf-qce"/>
             </connections>
-            <point key="canvasLocation" x="-388.40579710144931" y="166.40625"/>
+            <point key="canvasLocation" x="-388.40579710144931" y="132.58928571428572"/>
         </tableViewCell>
     </objects>
 </document>

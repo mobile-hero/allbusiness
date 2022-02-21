@@ -19,14 +19,14 @@
                 <outlet property="nameLabel" destination="lSS-5K-Mpq" id="Wkt-5g-d9s"/>
                 <outlet property="openHoursErrorLabel" destination="I5y-aA-cfA" id="t67-Eg-K9C"/>
                 <outlet property="openHoursLoadingIndicator" destination="Dw1-VX-m8b" id="t0m-iN-cWd"/>
-                <outlet property="openHoursTableHeightConstraint" destination="2x3-Rx-hnT" id="YeR-iW-Ije"/>
+                <outlet property="openHoursTableHeightConstraint" destination="f3j-CS-lLP" id="XmX-TG-4pq"/>
                 <outlet property="openHoursTableView" destination="Cz8-DB-1lL" id="Hcm-Ss-8gC"/>
                 <outlet property="phoneButton" destination="dfp-sr-Hld" id="3Fd-gd-VjA"/>
                 <outlet property="phoneLabel" destination="Wbg-mV-1p8" id="twR-oa-XEO"/>
                 <outlet property="ratingLabel" destination="TO1-1y-wWv" id="pMy-JT-Kfl"/>
                 <outlet property="reviewsErrorLabel" destination="dyc-zQ-IXc" id="v8e-iA-xew"/>
                 <outlet property="reviewsLoadingIndicator" destination="b6V-5e-jWK" id="rQu-5j-sSU"/>
-                <outlet property="reviewsTableHeightConstraint" destination="f3j-CS-lLP" id="J9J-Ej-3WM"/>
+                <outlet property="reviewsTableHeightConstraint" destination="2x3-Rx-hnT" id="ykD-NC-a5t"/>
                 <outlet property="reviewsTableView" destination="4Gl-Jx-IzV" id="qx5-Se-fuL"/>
                 <outlet property="view" destination="iN0-l3-epB" id="PaZ-mb-ALK"/>
                 <outlet property="websiteButton" destination="AU2-Ea-UBG" id="qOj-4I-bt8"/>
@@ -205,6 +205,48 @@
                                         <constraint firstItem="ITi-eG-i8U" firstAttribute="leading" secondItem="CMR-6W-Vjj" secondAttribute="leading" constant="16" id="zcd-30-z7T"/>
                                     </constraints>
                                 </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hb2-sE-Fea">
+                                    <rect key="frame" x="0.0" y="671.5" width="414" height="168"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Hours" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fr5-Se-LcT">
+                                            <rect key="frame" x="16" y="0.0" width="382" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" separatorInsetReference="fromAutomaticInsets" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Cz8-DB-1lL">
+                                            <rect key="frame" x="0.0" y="40" width="414" height="128"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="128" id="f3j-CS-lLP"/>
+                                            </constraints>
+                                            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </tableView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, this business is closed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5y-aA-cfA">
+                                            <rect key="frame" x="97" y="93.5" width="220.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Dw1-VX-m8b">
+                                            <rect key="frame" x="197" y="94" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Dw1-VX-m8b" firstAttribute="centerX" secondItem="Cz8-DB-1lL" secondAttribute="centerX" id="2kD-MG-qWB"/>
+                                        <constraint firstAttribute="trailing" secondItem="fr5-Se-LcT" secondAttribute="trailing" constant="16" id="4es-1v-Eai"/>
+                                        <constraint firstItem="fr5-Se-LcT" firstAttribute="leading" secondItem="hb2-sE-Fea" secondAttribute="leading" constant="16" id="53f-rU-BxG"/>
+                                        <constraint firstItem="I5y-aA-cfA" firstAttribute="centerX" secondItem="Cz8-DB-1lL" secondAttribute="centerX" id="5G0-wp-6ZQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="Cz8-DB-1lL" secondAttribute="bottom" id="8fR-nl-EIU"/>
+                                        <constraint firstItem="I5y-aA-cfA" firstAttribute="centerY" secondItem="Cz8-DB-1lL" secondAttribute="centerY" id="Cdk-9t-JOM"/>
+                                        <constraint firstItem="fr5-Se-LcT" firstAttribute="top" secondItem="hb2-sE-Fea" secondAttribute="top" id="cfa-Oe-l7M"/>
+                                        <constraint firstItem="Cz8-DB-1lL" firstAttribute="top" secondItem="fr5-Se-LcT" secondAttribute="bottom" constant="16" id="hJW-hs-HRm"/>
+                                        <constraint firstAttribute="trailing" secondItem="Cz8-DB-1lL" secondAttribute="trailing" id="iCA-V3-3WL"/>
+                                        <constraint firstItem="Dw1-VX-m8b" firstAttribute="centerY" secondItem="Cz8-DB-1lL" secondAttribute="centerY" id="n5g-yc-hfW"/>
+                                        <constraint firstItem="Cz8-DB-1lL" firstAttribute="leading" secondItem="hb2-sE-Fea" secondAttribute="leading" id="tX8-RS-dDo"/>
+                                    </constraints>
+                                </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyw-rO-P4L">
                                     <rect key="frame" x="0.0" y="859.5" width="414" height="168"/>
                                     <subviews>
@@ -243,47 +285,6 @@
                                         <constraint firstItem="dyc-zQ-IXc" firstAttribute="centerX" secondItem="4Gl-Jx-IzV" secondAttribute="centerX" id="qY1-xT-eVX"/>
                                         <constraint firstItem="0xu-qS-oUZ" firstAttribute="leading" secondItem="oyw-rO-P4L" secondAttribute="leading" constant="16" id="tsN-Kd-aUQ"/>
                                         <constraint firstAttribute="bottom" secondItem="4Gl-Jx-IzV" secondAttribute="bottom" id="yVy-nB-N0Z"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hb2-sE-Fea">
-                                    <rect key="frame" x="0.0" y="671.5" width="414" height="168"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Hours" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fr5-Se-LcT">
-                                            <rect key="frame" x="16" y="0.0" width="382" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Cz8-DB-1lL">
-                                            <rect key="frame" x="16" y="40" width="382" height="128"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="128" id="f3j-CS-lLP"/>
-                                            </constraints>
-                                            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </tableView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops, this business is closed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5y-aA-cfA">
-                                            <rect key="frame" x="97" y="93.5" width="220.5" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Dw1-VX-m8b">
-                                            <rect key="frame" x="197" y="93" width="20" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </activityIndicatorView>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="fr5-Se-LcT" secondAttribute="trailing" constant="16" id="4es-1v-Eai"/>
-                                        <constraint firstItem="fr5-Se-LcT" firstAttribute="leading" secondItem="hb2-sE-Fea" secondAttribute="leading" constant="16" id="53f-rU-BxG"/>
-                                        <constraint firstItem="I5y-aA-cfA" firstAttribute="centerX" secondItem="Cz8-DB-1lL" secondAttribute="centerX" id="5G0-wp-6ZQ"/>
-                                        <constraint firstAttribute="bottom" secondItem="Cz8-DB-1lL" secondAttribute="bottom" id="8fR-nl-EIU"/>
-                                        <constraint firstItem="I5y-aA-cfA" firstAttribute="centerY" secondItem="Cz8-DB-1lL" secondAttribute="centerY" id="Cdk-9t-JOM"/>
-                                        <constraint firstItem="fr5-Se-LcT" firstAttribute="top" secondItem="hb2-sE-Fea" secondAttribute="top" id="cfa-Oe-l7M"/>
-                                        <constraint firstItem="Cz8-DB-1lL" firstAttribute="top" secondItem="fr5-Se-LcT" secondAttribute="bottom" constant="16" id="hJW-hs-HRm"/>
-                                        <constraint firstAttribute="trailing" secondItem="Cz8-DB-1lL" secondAttribute="trailing" constant="16" id="iCA-V3-3WL"/>
-                                        <constraint firstItem="Cz8-DB-1lL" firstAttribute="leading" secondItem="hb2-sE-Fea" secondAttribute="leading" constant="16" id="tX8-RS-dDo"/>
                                     </constraints>
                                 </view>
                             </subviews>

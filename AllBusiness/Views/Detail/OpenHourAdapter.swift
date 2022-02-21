@@ -19,8 +19,7 @@ class OpenHourAdapter: NSObject, BLTableViewDelegate {
         self.init()
         self.tableView = tableView
         self.heightConstraint = heightConstraint
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        tableView.setup(delegate: self, estimatedRowHeight: 100)
+        tableView.setup(delegate: self, estimatedRowHeight: 40)
         tableView.registerCell(OpenHourCell.self)
         tableView.reloadData()
     }
