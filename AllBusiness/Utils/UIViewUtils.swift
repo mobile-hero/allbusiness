@@ -36,6 +36,16 @@ extension UIView {
     }
 }
 
+extension UIControl {
+    func addOnValueChanged(on observer: Any, action: Selector) {
+        addTarget(observer, action: action, for: .valueChanged)
+    }
+    
+    func removeOnValueChanged(on observer: Any, action: Selector) {
+        removeTarget(observer, action: action, for: .valueChanged)
+    }
+}
+
 typealias BLTableViewDelegate = UITableViewDelegate & UITableViewDataSource
 
 extension UITableView {

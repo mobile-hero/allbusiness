@@ -12,6 +12,7 @@ class BusinessListCoordinator: Coordinator {
     
     private let navigationController: UINavigationController
     private var listController: BusinessListViewController?
+    private var filterController: BusinessFilterViewController?
     private var detailCoordinator: BusinessDetailCoordinator?
     
     init(navigationController: UINavigationController) {
@@ -34,8 +35,25 @@ class BusinessListCoordinator: Coordinator {
 }
 
 extension BusinessListCoordinator: BusinessListViewControllerDelegate {
+    func businessListDidTappedFilter(listViewModel: BusinessListViewModel) {
+        let filterController = BusinessFilterViewController(businessListViewModel: listViewModel)
+        filterController.delegate = self
+        navigationController.present(UINavigationController(rootViewController: filterController), animated: true, completion: nil)
+        self.filterController = filterController
+    }
+    
     func businessListDidSelectItem(business: Business) {
         detailCoordinator = BusinessDetailCoordinator(navigationController: navigationController, business: business)
         detailCoordinator?.start()
+    }
+}
+
+extension BusinessListCoordinator: BusinessFilterViewControllerDelegate {
+    func businessFilterDidClosed() {
+        listController?.viewModel?.loadBusiness()
+    }
+    
+    func businessFilterSelectLocation() {
+        print("Select location")
     }
 }

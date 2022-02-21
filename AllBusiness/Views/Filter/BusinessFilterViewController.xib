@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BusinessFilterViewController" customModule="AllBusiness" customModuleProvider="target">
+            <connections>
+                <outlet property="locationField" destination="CpQ-h4-QIC" id="RWV-1R-4yW"/>
+                <outlet property="sortByControl" destination="EQo-z2-eyC" id="GUB-xo-pjr"/>
+                <outlet property="view" destination="iN0-l3-epB" id="DJo-jC-t7g"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSQ-rh-HdV">
+                    <rect key="frame" x="16" y="60" width="382" height="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CpQ-h4-QIC">
+                    <rect key="frame" x="16" y="86" width="382" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2M-hy-nIt">
+                    <rect key="frame" x="16" y="136" width="382" height="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EQo-z2-eyC">
+                    <rect key="frame" x="16" y="162" width="382" height="32"/>
+                    <segments>
+                        <segment title="Rating"/>
+                        <segment title="Distance"/>
+                    </segments>
+                </segmentedControl>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="CpQ-h4-QIC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="3Yr-Fc-UNl"/>
+                <constraint firstItem="EQo-z2-eyC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="9iQ-1A-38K"/>
+                <constraint firstItem="m2M-hy-nIt" firstAttribute="top" secondItem="CpQ-h4-QIC" secondAttribute="bottom" constant="16" id="Kig-eF-wwd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EQo-z2-eyC" secondAttribute="trailing" constant="16" id="OPZ-tx-AZp"/>
+                <constraint firstItem="EQo-z2-eyC" firstAttribute="top" secondItem="m2M-hy-nIt" secondAttribute="bottom" constant="8" id="P0y-Xo-f2h"/>
+                <constraint firstItem="CpQ-h4-QIC" firstAttribute="top" secondItem="dSQ-rh-HdV" secondAttribute="bottom" constant="8" id="PyF-K8-XMo"/>
+                <constraint firstItem="m2M-hy-nIt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="QeA-3e-H73"/>
+                <constraint firstItem="dSQ-rh-HdV" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="Qed-U8-FfI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dSQ-rh-HdV" secondAttribute="trailing" constant="16" id="fq3-xI-aHU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="m2M-hy-nIt" secondAttribute="trailing" constant="16" id="lsQ-hf-Z2a"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CpQ-h4-QIC" secondAttribute="trailing" constant="16" id="osT-Ae-HR0"/>
+                <constraint firstItem="dSQ-rh-HdV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="z4Z-yQ-ce7"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="66"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

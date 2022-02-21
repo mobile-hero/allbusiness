@@ -10,9 +10,10 @@ import UIKit
 
 protocol BusinessListViewControllerDelegate: AnyObject {
     func businessListDidSelectItem(business: Business)
+    func businessListDidTappedFilter(listViewModel: BusinessListViewModel)
 }
 
-class BusinessListViewController: ViewController, BusinessListAdapterDelegate {
+class BusinessListViewController: ViewController, BusinessListAdapterDelegate, UISearchResultsUpdating {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -40,7 +41,37 @@ class BusinessListViewController: ViewController, BusinessListAdapterDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        bindData()
+    }
+    
+    private func setupView() {
+        title = "All Businesses"
+        view.backgroundColor = .background
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "filter"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(filterButtonDidTapped))
         
+        collectionView.backgroundColor = .background
+        activityIndicator.color = .text
+        activityIndicator.startAnimating()
+        errorContainerView.isHidden = true
+        messageLabel.textColor = .text
+        
+        retryButton.addClick(on: self, action: #selector(retryButtonDidTapped))
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search business or cuisine"
+        self.navigationItem.searchController = searchController
+        self.definesPresentationContext = true
+        
+        collectionAdapter = BusinessListAdapter(collectionView: collectionView)
+        collectionAdapter?.delegate = self
+    }
+    
+    func bindData() {
         viewModel?.source.bind { source in
             if (source.isEmpty && self.viewModel?.firstLoad.value == false) {
                 self.errorContainerView.isHidden = false
@@ -73,57 +104,27 @@ class BusinessListViewController: ViewController, BusinessListAdapterDelegate {
         viewModel?.requestLocation()
     }
     
-    private func setupView() {
-        title = "All Businesses"
-        view.backgroundColor = .background
-        collectionView.backgroundColor = .background
-        activityIndicator.color = .text
-        activityIndicator.startAnimating()
-        errorContainerView.isHidden = true
-        messageLabel.textColor = .text
-        
-        retryButton.addClick(on: self, action: #selector(retryButtonDidTapped))
-        
-        let searchController = UISearchController(searchResultsController: nil)
-//        searchController.searchResultsUpdater = self.viewModel
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search business or cuisine"
-        self.navigationItem.searchController = searchController
-        self.definesPresentationContext = true
-//        searchBar = UISearchBar()
-//        navigationItem.titleView = searchBar
-//        searchBarAdapter = PokemonSearchAdapter(searchBar: searchBar)
-//        searchBarAdapter?.delegate = self
-        
-        collectionAdapter = BusinessListAdapter(collectionView: collectionView)
-        collectionAdapter?.delegate = self
-    }
-    
     func businessAdapter(didSelected business: Business) {
         delegate?.businessListDidSelectItem(business: business)
     }
     
     func businessAdapterLoadMoreItems() {
-        if (viewModel?.lastKeyword.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == true) {
-            viewModel?.loadMoreBusiness(coord: nil, location: nil, sortBy: "rating", term: "")
-        } else {
-            var keyword = viewModel?.lastKeyword ?? ""
-            if (!keyword.isEmpty) {
-                keyword = "*\(keyword)*"
-            }
-            viewModel?.loadMoreBusiness(coord: nil, location: nil, sortBy: "rating", term: keyword)
-        }
+        viewModel?.loadMoreBusiness()
     }
     
-    func startSearch(with keyword: String) {
-//        viewModel?.searchPokemon(keyword: keyword)
-    }
-    
-    func cancelSearch() {
-//        viewModel?.loadPokemon("")
+    func updateSearchResults(for searchController: UISearchController) {
+        viewModel?.searchBusiness(keyword: searchController.searchBar.text!)
     }
     
     @objc func retryButtonDidTapped() {
-        viewModel?.loadBusiness(coord: nil, location: nil, sortBy: "rating", term: "")
+        viewModel?.retryLoad()
+    }
+    
+    @objc func filterButtonDidTapped() {
+        guard let viewModel = viewModel else {
+            return
+        }
+
+        delegate?.businessListDidTappedFilter(listViewModel: viewModel)
     }
 }

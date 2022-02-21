@@ -17,11 +17,16 @@ protocol BusinessListViewModel: AnyObject {
     var limit: Int { get set }
     var offset: Int { get set }
     var lastKeyword: String { get set }
+    var location: String { get set }
+    var coordinate: CLLocationCoordinate2D? { get set }
+    var sortBy: String { get set }
     
-    func getLatestLocation()
+    func getLatestLocation() -> CLLocationCoordinate2D
     func requestLocation()
-    func loadBusiness(coord: CLLocationCoordinate2D?, location: String?, sortBy: String, term: String?)
-    func loadMoreBusiness(coord: CLLocationCoordinate2D?, location: String?, sortBy: String, term: String?)
+    func loadBusiness()
+    func loadMoreBusiness()
+    func searchBusiness(keyword: String)
+    func retryLoad()
 }
 
 class BusinessListViewModelImpl: NSObject, BusinessListViewModel {
@@ -33,6 +38,9 @@ class BusinessListViewModelImpl: NSObject, BusinessListViewModel {
     var limit: Int = 30
     var offset: Int = 0
     var lastKeyword: String = ""
+    var location: String = ""
+    var coordinate: CLLocationCoordinate2D? = nil
+    var sortBy: String = "rating"
     private var hasMore: Bool = false
     
     let yelpServices: YelpFusionServices
@@ -49,35 +57,38 @@ class BusinessListViewModelImpl: NSObject, BusinessListViewModel {
         locationService.requestLocation()
     }
     
-    func getLatestLocation() {
+    func getLatestLocation() -> CLLocationCoordinate2D {
         let location = locationService.getLatestLocation()
         print(location)
+        return location.coordinate
     }
     
-    func loadBusiness(coord: CLLocationCoordinate2D? = nil, location: String? = nil, sortBy: String, term: String?) {
+    func loadBusiness() {
         firstLoad.value = true
         source.value.removeAll()
         offset = 0
-        if (location != nil) {
-            loadAllBusiness(coord: nil, location: location, sortBy: sortBy, term: term)
+        if (!location.isEmpty) {
+            loadAllBusiness(coord: nil, location: location, sortBy: sortBy, term: lastKeyword)
         } else {
-            loadAllBusiness(coord: coord, location: nil, sortBy: sortBy, term: term)
+            loadAllBusiness(coord: coordinate, location: nil, sortBy: sortBy, term: lastKeyword)
         }
     }
     
-    func loadMoreBusiness(coord: CLLocationCoordinate2D? = nil, location: String? = nil, sortBy: String, term: String?) {
+    func loadMoreBusiness() {
         if (hasMore && !isLoading.value) {
-            if (location != nil) {
-                loadAllBusiness(coord: nil, location: location, sortBy: sortBy, term: term)
+            if (!location.isEmpty) {
+                loadAllBusiness(coord: nil, location: location, sortBy: sortBy, term: lastKeyword)
             } else {
-                loadAllBusiness(coord: coord, location: nil, sortBy: sortBy, term: term)
+                loadAllBusiness(coord: coordinate, location: nil, sortBy: sortBy, term: lastKeyword)
             }
         }
     }
 
     private func loadAllBusiness(coord: CLLocationCoordinate2D?, location: String?, sortBy: String, term: String?) {
+        isLoading.value = true
         yelpServices.getBusinesses(limit: limit, offset: offset, coord: coord, location: location, sortBy: sortBy, term: term) { value, error in
             self.firstLoad.value = false
+            self.isLoading.value = false
             if (value != nil) {
                 let value = value.unsafelyUnwrapped
                 self.offset += value.businesses.count
@@ -88,11 +99,21 @@ class BusinessListViewModelImpl: NSObject, BusinessListViewModel {
             }
         }
     }
+    
+    func searchBusiness(keyword: String) {
+        self.lastKeyword = keyword
+        self.loadBusiness()
+    }
+    
+    func retryLoad() {
+        self.loadBusiness()
+    }
 }
 
 extension BusinessListViewModelImpl: LocationServicesDelegate {
     func locationServicesOnLatest(locations: [CLLocation]) {
         guard !locations.isEmpty else { return }
-        loadBusiness(coord: locations.first?.coordinate, location: nil, sortBy: "rating", term: nil)
+        self.coordinate = locations.first?.coordinate
+        loadAllBusiness(coord: locations.first?.coordinate, location: nil, sortBy: sortBy, term: nil)
     }
 }

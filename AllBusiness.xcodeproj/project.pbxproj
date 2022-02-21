@@ -65,6 +65,8 @@
 		149939D927C3F7160096DF41 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939D827C3F7160096DF41 /* PhotoCell.swift */; };
 		149939DB27C3F7290096DF41 /* PhotoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939DA27C3F7290096DF41 /* PhotoAdapter.swift */; };
 		149939DD27C3FA040096DF41 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149939D727C3F6FB0096DF41 /* PhotoCell.xib */; };
+		149939DF27C409F60096DF41 /* BusinessFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149939DE27C409F60096DF41 /* BusinessFilterViewController.xib */; };
+		149939E127C40ACB0096DF41 /* BusinessFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939E027C40ACB0096DF41 /* BusinessFilterViewController.swift */; };
 		2F32950DF0F0BD3A99BC8744 /* Pods_AllBusiness_AllBusinessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715F2083331D92A69A966272 /* Pods_AllBusiness_AllBusinessUITests.framework */; };
 		302BA0E7030FF5888C379310 /* Pods_AllBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3780E3816998AB411391E3D /* Pods_AllBusiness.framework */; };
 		594F6B44435C91F1423B15B2 /* Pods_AllBusinessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D5F1228ACAC9B1DA7F68AB /* Pods_AllBusinessTests.framework */; };
@@ -151,6 +153,8 @@
 		149939D727C3F6FB0096DF41 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		149939D827C3F7160096DF41 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		149939DA27C3F7290096DF41 /* PhotoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAdapter.swift; sourceTree = "<group>"; };
+		149939DE27C409F60096DF41 /* BusinessFilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessFilterViewController.xib; sourceTree = "<group>"; };
+		149939E027C40ACB0096DF41 /* BusinessFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessFilterViewController.swift; sourceTree = "<group>"; };
 		21D5F1228ACAC9B1DA7F68AB /* Pods_AllBusinessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllBusinessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56388354582F05278C15759B /* Pods-AllBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllBusiness.release.xcconfig"; path = "Target Support Files/Pods-AllBusiness/Pods-AllBusiness.release.xcconfig"; sourceTree = "<group>"; };
 		715F2083331D92A69A966272 /* Pods_AllBusiness_AllBusinessUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllBusiness_AllBusinessUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +226,8 @@
 		145778E327C100D700C3A9D9 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				149939E027C40ACB0096DF41 /* BusinessFilterViewController.swift */,
+				149939DE27C409F60096DF41 /* BusinessFilterViewController.xib */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -524,6 +530,7 @@
 				149939D427C3EDD60096DF41 /* ReviewCell.xib in Resources */,
 				145B438327C2A4E4009EAE62 /* BusinessDetailViewController.xib in Resources */,
 				149939DD27C3FA040096DF41 /* PhotoCell.xib in Resources */,
+				149939DF27C409F60096DF41 /* BusinessFilterViewController.xib in Resources */,
 				145778F327C11A8500C3A9D9 /* BusinessListViewController.xib in Resources */,
 				1460A61027BE99FB00BAA9AD /* Assets.xcassets in Resources */,
 				145778F427C11A8A00C3A9D9 /* BusinessListCell.xib in Resources */,
@@ -688,6 +695,7 @@
 				145778D027C0E51F00C3A9D9 /* BusinessListAPI.swift in Sources */,
 				149939BE27C392010096DF41 /* BusinessDetailViewModel.swift in Sources */,
 				145778D627C0E97000C3A9D9 /* YelpFusionServices.swift in Sources */,
+				149939E127C40ACB0096DF41 /* BusinessFilterViewController.swift in Sources */,
 				145778D427C0E90B00C3A9D9 /* APIError.swift in Sources */,
 				1460A64527BE9CBE00BAA9AD /* Center.swift in Sources */,
 				149939D927C3F7160096DF41 /* PhotoCell.swift in Sources */,
