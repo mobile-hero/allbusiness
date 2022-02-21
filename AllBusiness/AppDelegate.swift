@@ -11,11 +11,23 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    var window: UIWindow?
+    var applicationCoordinator: ApplicationCoordinator?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if #available(iOS 13, *) {
+            // do not setup window here
+        } else {
+            setupWindow();
+        }
         return true
+    }
+    
+    private func setupWindow() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        applicationCoordinator = ApplicationCoordinator(window: window.unsafelyUnwrapped)
+        applicationCoordinator?.start()
     }
 
     // MARK: UISceneSession Lifecycle

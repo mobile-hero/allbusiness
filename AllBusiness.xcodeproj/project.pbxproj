@@ -27,6 +27,12 @@
 		145778ED27C1088800C3A9D9 /* UIViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460A64E27BEA2BA00BAA9AD /* UIViewUtils.swift */; };
 		145778EE27C1088800C3A9D9 /* UIColorScheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1460A64C27BEA2B900BAA9AD /* UIColorScheme.plist */; };
 		145778F027C108F000C3A9D9 /* BusinessListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145778EF27C108F000C3A9D9 /* BusinessListCell.swift */; };
+		145778F327C11A8500C3A9D9 /* BusinessListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145778F127C11A5C00C3A9D9 /* BusinessListViewController.xib */; };
+		145778F427C11A8A00C3A9D9 /* BusinessListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145778F227C11A7500C3A9D9 /* BusinessListCell.xib */; };
+		145B438327C2A4E4009EAE62 /* BusinessDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145B438227C2A4E4009EAE62 /* BusinessDetailViewController.xib */; };
+		145B438527C3603C009EAE62 /* BusinessDetailAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B438427C3603C009EAE62 /* BusinessDetailAPI.swift */; };
+		145B438727C3606C009EAE62 /* BusinessReviewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B438627C3606C009EAE62 /* BusinessReviewsAPI.swift */; };
+		145B438927C3608D009EAE62 /* BusinessDealsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B438827C3608D009EAE62 /* BusinessDealsAPI.swift */; };
 		1460A60427BE99F900BAA9AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460A60327BE99F900BAA9AD /* AppDelegate.swift */; };
 		1460A60627BE99F900BAA9AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460A60527BE99F900BAA9AD /* SceneDelegate.swift */; };
 		1460A60827BE99F900BAA9AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460A60727BE99F900BAA9AD /* ViewController.swift */; };
@@ -80,6 +86,12 @@
 		145778E827C1034800C3A9D9 /* BusinessListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessListViewModel.swift; sourceTree = "<group>"; };
 		145778EA27C1086400C3A9D9 /* BusinessListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessListAdapter.swift; sourceTree = "<group>"; };
 		145778EF27C108F000C3A9D9 /* BusinessListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessListCell.swift; sourceTree = "<group>"; };
+		145778F127C11A5C00C3A9D9 /* BusinessListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessListViewController.xib; sourceTree = "<group>"; };
+		145778F227C11A7500C3A9D9 /* BusinessListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessListCell.xib; sourceTree = "<group>"; };
+		145B438227C2A4E4009EAE62 /* BusinessDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessDetailViewController.xib; sourceTree = "<group>"; };
+		145B438427C3603C009EAE62 /* BusinessDetailAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailAPI.swift; sourceTree = "<group>"; };
+		145B438627C3606C009EAE62 /* BusinessReviewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessReviewsAPI.swift; sourceTree = "<group>"; };
+		145B438827C3608D009EAE62 /* BusinessDealsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDealsAPI.swift; sourceTree = "<group>"; };
 		1460A60027BE99F900BAA9AD /* AllBusiness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllBusiness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1460A60327BE99F900BAA9AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1460A60527BE99F900BAA9AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,7 +162,9 @@
 			children = (
 				145778E427C1013500C3A9D9 /* BusinessListViewController.swift */,
 				145778EA27C1086400C3A9D9 /* BusinessListAdapter.swift */,
+				145778F127C11A5C00C3A9D9 /* BusinessListViewController.xib */,
 				145778EF27C108F000C3A9D9 /* BusinessListCell.swift */,
+				145778F227C11A7500C3A9D9 /* BusinessListCell.xib */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -159,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				145778E627C101DB00C3A9D9 /* BusinessDetailViewController.swift */,
+				145B438227C2A4E4009EAE62 /* BusinessDetailViewController.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -243,6 +258,7 @@
 		1460A63727BE9B5600BAA9AD /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				1460A65527BEA31500BAA9AD /* Base */,
 				1460A64F27BEA31500BAA9AD /* API */,
 				1460A64B27BEA16E00BAA9AD /* Services */,
 				1460A63B27BE9B9000BAA9AD /* Models */,
@@ -304,8 +320,10 @@
 		1460A64F27BEA31500BAA9AD /* API */ = {
 			isa = PBXGroup;
 			children = (
-				1460A65527BEA31500BAA9AD /* Base */,
 				145778CF27C0E51F00C3A9D9 /* BusinessListAPI.swift */,
+				145B438427C3603C009EAE62 /* BusinessDetailAPI.swift */,
+				145B438627C3606C009EAE62 /* BusinessReviewsAPI.swift */,
+				145B438827C3608D009EAE62 /* BusinessDealsAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -454,7 +472,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1460A61327BE99FB00BAA9AD /* LaunchScreen.storyboard in Resources */,
+				145B438327C2A4E4009EAE62 /* BusinessDetailViewController.xib in Resources */,
+				145778F327C11A8500C3A9D9 /* BusinessListViewController.xib in Resources */,
 				1460A61027BE99FB00BAA9AD /* Assets.xcassets in Resources */,
+				145778F427C11A8A00C3A9D9 /* BusinessListCell.xib in Resources */,
 				1460A60B27BE99F900BAA9AD /* Main.storyboard in Resources */,
 				145778EE27C1088800C3A9D9 /* UIColorScheme.plist in Resources */,
 			);
@@ -584,6 +605,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				145B438927C3608D009EAE62 /* BusinessDealsAPI.swift in Sources */,
 				14354D3B27C0ADF10066AC11 /* LocationServices.swift in Sources */,
 				1460A64727BE9CD500BAA9AD /* Location.swift in Sources */,
 				145778D227C0E90B00C3A9D9 /* RootAPI.swift in Sources */,
@@ -595,6 +617,7 @@
 				145778DE27C100B400C3A9D9 /* BusinessListCoordinator.swift in Sources */,
 				145778DD27C100AF00C3A9D9 /* BusinessDetailCoordinator.swift in Sources */,
 				145778ED27C1088800C3A9D9 /* UIViewUtils.swift in Sources */,
+				145B438727C3606C009EAE62 /* BusinessReviewsAPI.swift in Sources */,
 				1460A63D27BE9C6300BAA9AD /* BusinessResponse.swift in Sources */,
 				145778D827C0EB7000C3A9D9 /* Box.swift in Sources */,
 				1460A60427BE99F900BAA9AD /* AppDelegate.swift in Sources */,
@@ -611,6 +634,7 @@
 				145778D127C0E90B00C3A9D9 /* SessionManager.swift in Sources */,
 				145778DF27C100B400C3A9D9 /* Coordinator.swift in Sources */,
 				145778E527C1013500C3A9D9 /* BusinessListViewController.swift in Sources */,
+				145B438527C3603C009EAE62 /* BusinessDetailAPI.swift in Sources */,
 				145778E927C1034800C3A9D9 /* BusinessListViewModel.swift in Sources */,
 				145778E027C100B400C3A9D9 /* ApplicationCoordinator.swift in Sources */,
 			);
@@ -795,9 +819,11 @@
 				DEVELOPMENT_TEAM = HM226ZZ6XH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AllBusiness/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs your location to identify businesses around you";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -825,9 +851,11 @@
 				DEVELOPMENT_TEAM = HM226ZZ6XH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AllBusiness/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs your location to identify businesses around you";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

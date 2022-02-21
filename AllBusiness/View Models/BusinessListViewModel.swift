@@ -13,21 +13,25 @@ protocol BusinessListViewModel: AnyObject {
     var error: Box<APIError?> { get }
     var firstLoad: Box<Bool> { get }
     var isLoading: Box<Bool> { get }
+    
     var limit: Int { get set }
     var offset: Int { get set }
     var lastKeyword: String { get set }
+    
+    func getLatestLocation()
+    func requestLocation()
     func loadBusiness(coord: CLLocationCoordinate2D?, location: String?, sortBy: String, term: String?)
     func loadMoreBusiness(coord: CLLocationCoordinate2D?, location: String?, sortBy: String, term: String?)
 }
 
-class BusinessListViewModelImpl: BusinessListViewModel {
+class BusinessListViewModelImpl: NSObject, BusinessListViewModel {
     var source = Box<[Business]>([])
     var error = Box<APIError?>(nil)
     var firstLoad = Box<Bool>(true)
     var isLoading = Box<Bool>(true)
     
-    var limit: Int = 1
-    var offset: Int = 30
+    var limit: Int = 30
+    var offset: Int = 0
     var lastKeyword: String = ""
     private var hasMore: Bool = false
     
@@ -37,6 +41,17 @@ class BusinessListViewModelImpl: BusinessListViewModel {
     init(yelpServices: YelpFusionServices, locationServices: LocationServices) {
         self.yelpServices = yelpServices
         self.locationService = locationServices
+        super.init()
+        locationServices.delegate = self
+    }
+    
+    func requestLocation() {
+        locationService.requestLocation()
+    }
+    
+    func getLatestLocation() {
+        let location = locationService.getLatestLocation()
+        print(location)
     }
     
     func loadBusiness(coord: CLLocationCoordinate2D? = nil, location: String? = nil, sortBy: String, term: String?) {
@@ -72,5 +87,12 @@ class BusinessListViewModelImpl: BusinessListViewModel {
                 self.error.value = error as? APIError
             }
         }
+    }
+}
+
+extension BusinessListViewModelImpl: LocationServicesDelegate {
+    func locationServicesOnLatest(locations: [CLLocation]) {
+        guard !locations.isEmpty else { return }
+        loadBusiness(coord: locations.first?.coordinate, location: nil, sortBy: "rating", term: nil)
     }
 }

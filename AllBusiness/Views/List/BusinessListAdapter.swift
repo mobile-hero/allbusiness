@@ -49,7 +49,7 @@ class BusinessListAdapter: NSObject, BLCollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: BusinessListCell = collectionView.reusableCell(for: indexPath)
-        cell.bind(source[indexPath.row].imageURL)
+        cell.bind(source[indexPath.row].imageUrl)
         return cell
     }
     

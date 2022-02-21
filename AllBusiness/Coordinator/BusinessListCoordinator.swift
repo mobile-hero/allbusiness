@@ -19,7 +19,11 @@ class BusinessListCoordinator: Coordinator {
     }
     
     func start() {
-        let yelpServices = YelpFusionServices(session: CustomSessionManager.default, plugins: defaultPlugins, decoder: JSONDecoder())
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        let yelpServices = YelpFusionServices(session: CustomSessionManager.default,
+                                              plugins: defaultPlugins,
+                                              decoder: jsonDecoder)
         let locationServices = LocationServicesImpl(locationManager: CLLocationManager())
         let viewModel = BusinessListViewModelImpl(yelpServices: yelpServices, locationServices: locationServices)
         let listController = BusinessListViewController(viewModel: viewModel)

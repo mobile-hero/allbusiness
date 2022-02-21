@@ -16,5 +16,6 @@ class BusinessListCell: UICollectionViewCell {
     func bind(_ imageUrl: String) {
         let url = URL(string: imageUrl)!
         image.kf.setImage(with: .network(ImageResource(downloadURL: url)))
+        image.contentMode = .scaleAspectFill
     }
 }
