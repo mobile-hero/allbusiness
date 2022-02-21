@@ -12,14 +12,16 @@ import Kingfisher
 class BusinessListCell: UICollectionViewCell {
     
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     
-    func bind(_ imageUrl: String) {
-        guard !imageUrl.isEmpty else {
+    func bind(_ imageUrl: String, name: String) {
+        if !imageUrl.isEmpty, let url = URL(string: imageUrl) {
+            image.kf.setImage(with: .network(ImageResource(downloadURL: url)))
+            image.contentMode = .scaleAspectFill
+        } else {
             image.image = UIImage(named: "warning")
-            return
         }
-        let url = URL(string: imageUrl)!
-        image.kf.setImage(with: .network(ImageResource(downloadURL: url)))
-        image.contentMode = .scaleAspectFill
+        
+        nameLabel.text = name
     }
 }

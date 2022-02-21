@@ -13,6 +13,8 @@ class BusinessListCoordinator: Coordinator {
     private let navigationController: UINavigationController
     private var listController: BusinessListViewController?
     private var filterController: BusinessFilterViewController?
+    private var locationPickerController: BusinessLocationPickerViewController?
+    
     private var detailCoordinator: BusinessDetailCoordinator?
     
     init(navigationController: UINavigationController) {
@@ -50,10 +52,33 @@ extension BusinessListCoordinator: BusinessListViewControllerDelegate {
 
 extension BusinessListCoordinator: BusinessFilterViewControllerDelegate {
     func businessFilterDidClosed() {
-        listController?.viewModel?.loadBusiness()
+        if (listController?.viewModel?.location.isEmpty == true) {
+            listController?.viewModel?.requestLocation()
+        } else {
+            listController?.viewModel?.loadBusiness()
+        }
     }
     
     func businessFilterSelectLocation() {
-        print("Select location")
+        let searchServices = LocationSearchServicesImpl()
+        let pickerViewModel = BusinessLocationPickerViewModelImpl(locationSearchServices: searchServices)
+        let locationPickerController = BusinessLocationPickerViewController(locationPickerViewModel: pickerViewModel)
+        locationPickerController.delegate = self
+        filterController?.navigationController?.pushViewController(locationPickerController, animated: true)
+        self.locationPickerController = locationPickerController
+    }
+}
+
+extension BusinessListCoordinator: BusinessLocationPickerViewControllerDelegate {
+    func locationPickerCurrentLocationSelected() {
+        locationPickerController?.navigationController?.popViewController(animated: true)
+        listController?.viewModel?.location = ""
+        filterController?.locationField.text = ""
+    }
+    
+    func locationPickerNewLocationSelected(address: String) {
+        locationPickerController?.navigationController?.popViewController(animated: true)
+        listController?.viewModel?.location = address
+        filterController?.locationField.text = address
     }
 }

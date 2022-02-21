@@ -21,6 +21,7 @@ class BusinessFilterViewController: UIViewController {
     var delegate: BusinessFilterViewControllerDelegate?
     
     var businessListViewModel: BusinessListViewModel?
+    private lazy var sortBy = businessListViewModel?.sortBy
     
     init(businessListViewModel: BusinessListViewModel) {
         self.businessListViewModel = businessListViewModel
@@ -39,7 +40,7 @@ class BusinessFilterViewController: UIViewController {
     func setupView() {
         title = "Filter"
         view.backgroundColor = .background
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done,
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
                                                             target: self,
                                                             action: #selector(closeDidTapped))
         
@@ -51,11 +52,11 @@ class BusinessFilterViewController: UIViewController {
     @objc func sortByControlValueChanged(_ control: UISegmentedControl) {
         let index = control.selectedSegmentIndex
         let title = control.titleForSegment(at: index)!.lowercased()
-        print(title)
-        businessListViewModel?.sortBy = title
+        self.sortBy = title
     }
     
     @objc func closeDidTapped() {
+        businessListViewModel?.sortBy = sortBy!
         self.dismiss(animated: true) {
             self.delegate?.businessFilterDidClosed()
         }

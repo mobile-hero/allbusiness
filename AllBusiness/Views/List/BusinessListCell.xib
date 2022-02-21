@@ -20,17 +20,38 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D9h-vN-eZF">
                         <rect key="frame" x="0.0" y="0.0" width="367" height="407"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pM7-Ms-v7l">
+                        <rect key="frame" x="0.0" y="370.5" width="367" height="36.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ak7-Kj-f4K">
+                                <rect key="frame" x="8" y="8" width="351" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14970806572880679" green="0.1484361393232049" blue="0.14803122896533838" alpha="0.72401569694872736" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ak7-Kj-f4K" firstAttribute="leading" secondItem="pM7-Ms-v7l" secondAttribute="leading" constant="8" id="TPv-w7-7DG"/>
+                            <constraint firstItem="ak7-Kj-f4K" firstAttribute="top" secondItem="pM7-Ms-v7l" secondAttribute="top" constant="8" id="YMb-L8-iqg"/>
+                            <constraint firstAttribute="trailing" secondItem="ak7-Kj-f4K" secondAttribute="trailing" constant="8" id="ghX-fb-93b"/>
+                            <constraint firstAttribute="bottom" secondItem="ak7-Kj-f4K" secondAttribute="bottom" constant="8" id="oVp-iR-C3A"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="D9h-vN-eZF" firstAttribute="top" secondItem="kXZ-C7-VMv" secondAttribute="top" id="LCB-lU-37R"/>
                     <constraint firstAttribute="bottom" secondItem="D9h-vN-eZF" secondAttribute="bottom" id="RYG-YA-Nyx"/>
+                    <constraint firstItem="pM7-Ms-v7l" firstAttribute="leading" secondItem="kXZ-C7-VMv" secondAttribute="leading" id="aV8-yA-dTS"/>
                     <constraint firstItem="D9h-vN-eZF" firstAttribute="leading" secondItem="kXZ-C7-VMv" secondAttribute="leading" id="cra-6f-PFd"/>
+                    <constraint firstAttribute="bottom" secondItem="pM7-Ms-v7l" secondAttribute="bottom" id="diT-Vr-sZ2"/>
                     <constraint firstAttribute="trailing" secondItem="D9h-vN-eZF" secondAttribute="trailing" id="ey9-go-IvK"/>
+                    <constraint firstAttribute="trailing" secondItem="pM7-Ms-v7l" secondAttribute="trailing" id="i38-52-wkZ"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="367" height="407"/>
             <connections>
                 <outlet property="image" destination="D9h-vN-eZF" id="DFS-Vm-vao"/>
+                <outlet property="nameLabel" destination="ak7-Kj-f4K" id="Nju-wv-uqz"/>
             </connections>
             <point key="canvasLocation" x="299.27536231884062" y="214.62053571428569"/>
         </collectionViewCell>

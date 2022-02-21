@@ -67,6 +67,13 @@
 		149939DD27C3FA040096DF41 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149939D727C3F6FB0096DF41 /* PhotoCell.xib */; };
 		149939DF27C409F60096DF41 /* BusinessFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149939DE27C409F60096DF41 /* BusinessFilterViewController.xib */; };
 		149939E127C40ACB0096DF41 /* BusinessFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939E027C40ACB0096DF41 /* BusinessFilterViewController.swift */; };
+		149939E327C415360096DF41 /* BusinessLocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939E227C415360096DF41 /* BusinessLocationPickerViewController.swift */; };
+		149939E527C415E30096DF41 /* BusinessLocationPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939E427C415E30096DF41 /* BusinessLocationPickerViewModel.swift */; };
+		149939E727C417350096DF41 /* LocationSearchServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939E627C417350096DF41 /* LocationSearchServices.swift */; };
+		149939E927C41FC90096DF41 /* BusinessLocationPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149939E827C41FC80096DF41 /* BusinessLocationPickerViewController.xib */; };
+		149939EB27C420710096DF41 /* LocationPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149939EA27C420710096DF41 /* LocationPickerCell.xib */; };
+		149939ED27C420860096DF41 /* LocationPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939EC27C420860096DF41 /* LocationPickerCell.swift */; };
+		149939EF27C424090096DF41 /* LocationPickerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939EE27C424090096DF41 /* LocationPickerAdapter.swift */; };
 		2F32950DF0F0BD3A99BC8744 /* Pods_AllBusiness_AllBusinessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715F2083331D92A69A966272 /* Pods_AllBusiness_AllBusinessUITests.framework */; };
 		302BA0E7030FF5888C379310 /* Pods_AllBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3780E3816998AB411391E3D /* Pods_AllBusiness.framework */; };
 		594F6B44435C91F1423B15B2 /* Pods_AllBusinessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D5F1228ACAC9B1DA7F68AB /* Pods_AllBusinessTests.framework */; };
@@ -155,6 +162,13 @@
 		149939DA27C3F7290096DF41 /* PhotoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAdapter.swift; sourceTree = "<group>"; };
 		149939DE27C409F60096DF41 /* BusinessFilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessFilterViewController.xib; sourceTree = "<group>"; };
 		149939E027C40ACB0096DF41 /* BusinessFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessFilterViewController.swift; sourceTree = "<group>"; };
+		149939E227C415360096DF41 /* BusinessLocationPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLocationPickerViewController.swift; sourceTree = "<group>"; };
+		149939E427C415E30096DF41 /* BusinessLocationPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLocationPickerViewModel.swift; sourceTree = "<group>"; };
+		149939E627C417350096DF41 /* LocationSearchServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchServices.swift; sourceTree = "<group>"; };
+		149939E827C41FC80096DF41 /* BusinessLocationPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessLocationPickerViewController.xib; sourceTree = "<group>"; };
+		149939EA27C420710096DF41 /* LocationPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationPickerCell.xib; sourceTree = "<group>"; };
+		149939EC27C420860096DF41 /* LocationPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerCell.swift; sourceTree = "<group>"; };
+		149939EE27C424090096DF41 /* LocationPickerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerAdapter.swift; sourceTree = "<group>"; };
 		21D5F1228ACAC9B1DA7F68AB /* Pods_AllBusinessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllBusinessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56388354582F05278C15759B /* Pods-AllBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllBusiness.release.xcconfig"; path = "Target Support Files/Pods-AllBusiness/Pods-AllBusiness.release.xcconfig"; sourceTree = "<group>"; };
 		715F2083331D92A69A966272 /* Pods_AllBusiness_AllBusinessUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllBusiness_AllBusinessUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +242,11 @@
 			children = (
 				149939E027C40ACB0096DF41 /* BusinessFilterViewController.swift */,
 				149939DE27C409F60096DF41 /* BusinessFilterViewController.xib */,
+				149939E227C415360096DF41 /* BusinessLocationPickerViewController.swift */,
+				149939E827C41FC80096DF41 /* BusinessLocationPickerViewController.xib */,
+				149939EE27C424090096DF41 /* LocationPickerAdapter.swift */,
+				149939EC27C420860096DF41 /* LocationPickerCell.swift */,
+				149939EA27C420710096DF41 /* LocationPickerCell.xib */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -327,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				145778E827C1034800C3A9D9 /* BusinessListViewModel.swift */,
+				149939E427C415E30096DF41 /* BusinessLocationPickerViewModel.swift */,
 				149939BD27C392010096DF41 /* BusinessDetailViewModel.swift */,
 				149939BF27C392EC0096DF41 /* BusinessReviewsViewModel.swift */,
 				145778D727C0EB6C00C3A9D9 /* Box.swift */,
@@ -366,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				14354D3A27C0ADF10066AC11 /* LocationServices.swift */,
+				149939E627C417350096DF41 /* LocationSearchServices.swift */,
 				145778D527C0E97000C3A9D9 /* YelpFusionServices.swift */,
 			);
 			path = Services;
@@ -529,9 +550,11 @@
 				149939D027C3B20D0096DF41 /* OpenHourCell.xib in Resources */,
 				149939D427C3EDD60096DF41 /* ReviewCell.xib in Resources */,
 				145B438327C2A4E4009EAE62 /* BusinessDetailViewController.xib in Resources */,
+				149939EB27C420710096DF41 /* LocationPickerCell.xib in Resources */,
 				149939DD27C3FA040096DF41 /* PhotoCell.xib in Resources */,
 				149939DF27C409F60096DF41 /* BusinessFilterViewController.xib in Resources */,
 				145778F327C11A8500C3A9D9 /* BusinessListViewController.xib in Resources */,
+				149939E927C41FC90096DF41 /* BusinessLocationPickerViewController.xib in Resources */,
 				1460A61027BE99FB00BAA9AD /* Assets.xcassets in Resources */,
 				145778F427C11A8A00C3A9D9 /* BusinessListCell.xib in Resources */,
 				1460A60B27BE99F900BAA9AD /* Main.storyboard in Resources */,
@@ -682,6 +705,7 @@
 				145B438727C3606C009EAE62 /* BusinessReviewsAPI.swift in Sources */,
 				149939C427C394490096DF41 /* ReviewResponse.swift in Sources */,
 				1460A63D27BE9C6300BAA9AD /* BusinessResponse.swift in Sources */,
+				149939EF27C424090096DF41 /* LocationPickerAdapter.swift in Sources */,
 				145778D827C0EB7000C3A9D9 /* Box.swift in Sources */,
 				1460A60427BE99F900BAA9AD /* AppDelegate.swift in Sources */,
 				1460A64327BE9CB000BAA9AD /* Category.swift in Sources */,
@@ -691,8 +715,10 @@
 				149939D627C3F00C0096DF41 /* ReviewAdapter.swift in Sources */,
 				149939C627C394520096DF41 /* User.swift in Sources */,
 				145778E727C101DB00C3A9D9 /* BusinessDetailViewController.swift in Sources */,
+				149939E327C415360096DF41 /* BusinessLocationPickerViewController.swift in Sources */,
 				145778EC27C1088800C3A9D9 /* UIColorUtils.swift in Sources */,
 				145778D027C0E51F00C3A9D9 /* BusinessListAPI.swift in Sources */,
+				149939E727C417350096DF41 /* LocationSearchServices.swift in Sources */,
 				149939BE27C392010096DF41 /* BusinessDetailViewModel.swift in Sources */,
 				145778D627C0E97000C3A9D9 /* YelpFusionServices.swift in Sources */,
 				149939E127C40ACB0096DF41 /* BusinessFilterViewController.swift in Sources */,
@@ -703,12 +729,14 @@
 				149939CE27C3A3C60096DF41 /* OpenHourAdapter.swift in Sources */,
 				145778D127C0E90B00C3A9D9 /* SessionManager.swift in Sources */,
 				145778DF27C100B400C3A9D9 /* Coordinator.swift in Sources */,
+				149939ED27C420860096DF41 /* LocationPickerCell.swift in Sources */,
 				145778E527C1013500C3A9D9 /* BusinessListViewController.swift in Sources */,
 				149939C227C3943A0096DF41 /* Review.swift in Sources */,
 				145B438527C3603C009EAE62 /* BusinessDetailAPI.swift in Sources */,
 				145778E927C1034800C3A9D9 /* BusinessListViewModel.swift in Sources */,
 				149939C027C392EC0096DF41 /* BusinessReviewsViewModel.swift in Sources */,
 				145778E027C100B400C3A9D9 /* ApplicationCoordinator.swift in Sources */,
+				149939E527C415E30096DF41 /* BusinessLocationPickerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
