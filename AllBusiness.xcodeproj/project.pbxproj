@@ -59,6 +59,9 @@
 		149939CC27C3A3A50096DF41 /* OpenHourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939CB27C3A3A50096DF41 /* OpenHourCell.swift */; };
 		149939CE27C3A3C60096DF41 /* OpenHourAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939CD27C3A3C60096DF41 /* OpenHourAdapter.swift */; };
 		149939D027C3B20D0096DF41 /* OpenHourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149939CF27C3B20D0096DF41 /* OpenHourCell.xib */; };
+		149939D227C3EDAC0096DF41 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939D127C3EDAC0096DF41 /* ReviewCell.swift */; };
+		149939D427C3EDD60096DF41 /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149939D327C3EDD60096DF41 /* ReviewCell.xib */; };
+		149939D627C3F00C0096DF41 /* ReviewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149939D527C3F00B0096DF41 /* ReviewAdapter.swift */; };
 		2F32950DF0F0BD3A99BC8744 /* Pods_AllBusiness_AllBusinessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715F2083331D92A69A966272 /* Pods_AllBusiness_AllBusinessUITests.framework */; };
 		302BA0E7030FF5888C379310 /* Pods_AllBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3780E3816998AB411391E3D /* Pods_AllBusiness.framework */; };
 		594F6B44435C91F1423B15B2 /* Pods_AllBusinessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D5F1228ACAC9B1DA7F68AB /* Pods_AllBusinessTests.framework */; };
@@ -139,6 +142,9 @@
 		149939CB27C3A3A50096DF41 /* OpenHourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenHourCell.swift; sourceTree = "<group>"; };
 		149939CD27C3A3C60096DF41 /* OpenHourAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenHourAdapter.swift; sourceTree = "<group>"; };
 		149939CF27C3B20D0096DF41 /* OpenHourCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpenHourCell.xib; sourceTree = "<group>"; };
+		149939D127C3EDAC0096DF41 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		149939D327C3EDD60096DF41 /* ReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
+		149939D527C3F00B0096DF41 /* ReviewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAdapter.swift; sourceTree = "<group>"; };
 		21D5F1228ACAC9B1DA7F68AB /* Pods_AllBusinessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllBusinessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56388354582F05278C15759B /* Pods-AllBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllBusiness.release.xcconfig"; path = "Target Support Files/Pods-AllBusiness/Pods-AllBusiness.release.xcconfig"; sourceTree = "<group>"; };
 		715F2083331D92A69A966272 /* Pods_AllBusiness_AllBusinessUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllBusiness_AllBusinessUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +203,9 @@
 				149939CD27C3A3C60096DF41 /* OpenHourAdapter.swift */,
 				149939CB27C3A3A50096DF41 /* OpenHourCell.swift */,
 				149939CF27C3B20D0096DF41 /* OpenHourCell.xib */,
+				149939D527C3F00B0096DF41 /* ReviewAdapter.swift */,
+				149939D127C3EDAC0096DF41 /* ReviewCell.swift */,
+				149939D327C3EDD60096DF41 /* ReviewCell.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -503,6 +512,7 @@
 			files = (
 				1460A61327BE99FB00BAA9AD /* LaunchScreen.storyboard in Resources */,
 				149939D027C3B20D0096DF41 /* OpenHourCell.xib in Resources */,
+				149939D427C3EDD60096DF41 /* ReviewCell.xib in Resources */,
 				145B438327C2A4E4009EAE62 /* BusinessDetailViewController.xib in Resources */,
 				145778F327C11A8500C3A9D9 /* BusinessListViewController.xib in Resources */,
 				1460A61027BE99FB00BAA9AD /* Assets.xcassets in Resources */,
@@ -649,6 +659,7 @@
 				145778DE27C100B400C3A9D9 /* BusinessListCoordinator.swift in Sources */,
 				145778DD27C100AF00C3A9D9 /* BusinessDetailCoordinator.swift in Sources */,
 				149939C827C3976B0096DF41 /* Hour.swift in Sources */,
+				149939D227C3EDAC0096DF41 /* ReviewCell.swift in Sources */,
 				145778ED27C1088800C3A9D9 /* UIViewUtils.swift in Sources */,
 				145B438727C3606C009EAE62 /* BusinessReviewsAPI.swift in Sources */,
 				149939C427C394490096DF41 /* ReviewResponse.swift in Sources */,
@@ -659,6 +670,7 @@
 				1460A60627BE99F900BAA9AD /* SceneDelegate.swift in Sources */,
 				149939CC27C3A3A50096DF41 /* OpenHourCell.swift in Sources */,
 				145778EB27C1086400C3A9D9 /* BusinessListAdapter.swift in Sources */,
+				149939D627C3F00C0096DF41 /* ReviewAdapter.swift in Sources */,
 				149939C627C394520096DF41 /* User.swift in Sources */,
 				145778E727C101DB00C3A9D9 /* BusinessDetailViewController.swift in Sources */,
 				145778EC27C1088800C3A9D9 /* UIColorUtils.swift in Sources */,

@@ -48,6 +48,7 @@ class BusinessDetailViewController: UIViewController {
     let reviewsViewModel: BusinessReviewsViewModel
     
     private var openHourAdapter: OpenHourAdapter?
+    private var reviewAdapter: ReviewAdapter?
     
     init(business: Business, viewModel: BusinessDetailViewModel, reviewsViewModel: BusinessReviewsViewModel) {
         self.business = business
@@ -84,6 +85,7 @@ class BusinessDetailViewController: UIViewController {
         openHoursErrorLabel.isHidden = true
         openHoursLoadingIndicator.hidesWhenStopped = true
         
+        reviewAdapter = ReviewAdapter(tableView: reviewsTableView, heightConstraint: reviewsTableHeightConstraint)
         reviewsErrorLabel.isHidden = true
         reviewsLoadingIndicator.hidesWhenStopped = true
     }
@@ -126,13 +128,35 @@ class BusinessDetailViewController: UIViewController {
             self.openHoursErrorLabel.text = value?.message ?? ""
         }
         
+        reviewsViewModel.isLoading.bind { value in
+            if (value) {
+                self.reviewsLoadingIndicator.startAnimating()
+            } else {
+                self.reviewsLoadingIndicator.stopAnimating()
+            }
+        }
+        
+        reviewsViewModel.source.bind { value in
+            self.bindReviews(reviews: value)
+        }
+        
+        reviewsViewModel.error.bind { value in
+            self.reviewsErrorLabel.isHidden = value == nil
+            self.reviewsErrorLabel.text = value?.message ?? ""
+        }
+        
         viewModel.getDetails()
+        reviewsViewModel.getReviews()
     }
     
     func bindOtherDetails(business: Business) {
         if let hours = business.hoursTransformed {
             openHourAdapter?.setData(source: hours)
         }
+    }
+    
+    func bindReviews(reviews: [Review]) {
+        reviewAdapter?.setData(source: reviews)
     }
     
     @objc func addressButtonDidTapped() {
